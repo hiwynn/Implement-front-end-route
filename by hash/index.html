@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前端路由实现</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./router.js"></script>
+    <style>
+        .warp {
+            width: 400px;
+            height: 400px;
+            border: 1px solid grey;
+            margin: 0 auto;
+        }
+
+        .nav {
+            border-bottom: 1px solid grey;
+        }
+
+        .nav li {
+            display: inline-block;
+            list-style: none;
+        }
+
+        .nav li a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .router {
+            padding: 20px;
+        }
+
+        a {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<section class="warp">
+    <ul>
+        <li><a href="#/shouye">首页</a></li>
+        <li><a href="#/home">主页</a></li>
+        <li><a href="#/about">详情页</a></li>
+    </ul>
+
+</section>
+
+<script type="text/javascript">
+	var content = document.querySelector('body');
+	//给window对象挂载属性
+	window.Router = new Router();
+	window.Router.init();
+	Router.route('/shouye', function () {
+		alert("这是shou页");
+	});
+	Router.route('/home', function () {
+		alert("这是主页");
+	});
+	Router.route('/about', function () {
+		alert("这是详情页");
+	});
+</script>
+</body>
+</html>
